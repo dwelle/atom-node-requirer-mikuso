@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "main": "./lib/main",
-  "repository": "https://github.com/mikuso/atom-node-requirer",
+  "repository": "https://github.com/mikuso/atom-node-requirer-mikuso",
   "dependencies": {
     "async": "0.2.6",
     "atom-space-pen-views": "^2.0.0",
