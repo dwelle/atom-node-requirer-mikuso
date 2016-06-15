@@ -1,5 +1,5 @@
 {
-  "name": "node-requirer",
+  "name": "requirer-for-node",
   "version": "0.1.4",
   "description": "Node-requirer lets you quickly add require/import statements to any files/node_modules within your code!",
   "keywords": [
@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "main": "./lib/main",
-  "repository": "https://github.com/tnrich/atom-node-requirer",
+  "repository": "https://github.com/mikuso/requirer-for-node",
   "dependencies": {
     "async": "0.2.6",
     "atom-space-pen-views": "^2.0.0",
