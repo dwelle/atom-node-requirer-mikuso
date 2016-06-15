@@ -154,7 +154,7 @@ class FuzzyFinderView extends SelectListView
       name = filePath
       relativePath = filePath
     if @useOldRequireSyntax
-      editor.insertText("var " + camelcase(name) + " = require("+ "'" + relativePath + "')")
+      editor.insertText("var " + camelcase(name) + " = require("+ "'" + relativePath + "');")
     else 
       editor.insertText("import " + camelcase(name) + " from "+ "'" + relativePath + "'")
 
