@@ -140,7 +140,7 @@ class FuzzyFinderView extends SelectListView
     currentEditorPath = editor.getPath()
     if (pathExists.sync(filePath))
       # the file is defined locally (not an npm module)
-      relativePath = relative(currentEditorPath, filePath)
+      relativePath = relative(currentEditorPath, filePath).replace(/\\/g, '/')
       if relativePath[0] != '.'
         relativePath = './' + relativePath
       if relativePath.endsWith('/index.js')
@@ -151,12 +151,12 @@ class FuzzyFinderView extends SelectListView
       # name = moduleName(filePath)
     else 
       # the path is actually just the name of an npm package
-      name = camelcase(filePath)
+      name = filePath
       relativePath = filePath
     if @useOldRequireSyntax
-      editor.insertText("var " + name + " = require("+ "'" + relativePath + "')")
+      editor.insertText("var " + camelcase(name) + " = require("+ "'" + relativePath + "')")
     else 
-      editor.insertText("import " + name + " from "+ "'" + relativePath + "'")
+      editor.insertText("import " + camelcase(name) + " from "+ "'" + relativePath + "'")
 
   moveToLine: (lineNumber=-1) ->
     return unless lineNumber >= 0
